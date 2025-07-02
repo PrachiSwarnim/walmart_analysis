@@ -17,7 +17,8 @@ This end-to-end Walmart Sales Data Analysis project combines Python for data pre
 - **Step 1:** Obtain your Kaggle API token from Kaggle under Account Settings.
 - **Step 2:** Place the downloaded kaggle.json file in the following directory:
 ```bash
-C:\Users\<YourUsername>\.kaggle\```
+C:\Users\<YourUsername>\.kaggle\
+```
      
 ## Requirements
 
