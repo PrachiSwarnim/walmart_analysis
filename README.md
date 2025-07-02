@@ -16,17 +16,44 @@ This end-to-end Walmart Sales Data Analysis project combines Python for data pre
 ## 2. Configure Kaggle API for Data Access
 - **Step 1:** Obtain your Kaggle API token from Kaggle under Account Settings.
 - **Step 2:** Place the downloaded kaggle.json file in the following directory:
-```bash
-C:\Users\<YourUsername>\.kaggle\
-```
+  ```bash
+  C:\Users\<YourUsername>\.kaggle\
+  ```
 - **Step 3:** Use the command below to download datasets directly into your project folder:
-```bash
-kaggle datasets download -d najir0123/walmart-10k-sales-datasets
-```
+  ```bash
+  kaggle datasets download -d najir0123/walmart-10k-sales-datasets
+  ```
 
 ## 3. Data Acquisition
 - **Source:** [Walmart Sales Dataset](https://www.kaggle.com/datasets/najir0123/walmart-10k-sales-datasets)
 - **Storage:** Organize the dataset under a ```data/``` directory for easy access.
+
+## 4. Install Required Libraries & Load Data
+- **Install Python Libraries:**
+  ```bash
+  pip install pandas numpy sqlalchemy mysql-connector-python
+  ```
+- **Data Loading:** Import data into a Pandas DataFrame for exploration, cleaning, and transformation.
+
+## 5. Initial Data Exploration
+- **Goals:**
+  - Understand data distribution
+  - Check data types and schema
+  - Detect missing values or anomalies
+- **Methods:**
+  - Use Pandas functions like:
+    ```bash
+    df.info(), df.describe(), df.head()
+    ```
+## 6. Data Cleaning Pipeline:
+  - **Duplicate Handling:** Remove redundant records to ensure data integrity.
+  - **Missing Values:** Impute, fill, or remove nulls based on significance.
+  - **Data Type Correction:**
+    - Convert date columns to ```datetime```
+    - Ensure numeric columns (like revenue or quantity) are floats or integers
+  - **Currency & String Formatting:** Clean up currency symbols or inconsistent string patterns.
+  - **Data Validation:** Confirm there are no outliers, inconsistencies, or logical mismatches.
+
      
 ## Requirements
 
