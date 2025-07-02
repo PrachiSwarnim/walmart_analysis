@@ -148,5 +148,5 @@ This end-to-end Walmart Sales Data Analysis project combines Python for data pre
 - **Inspiration**: Walmart’s business case studies on sales and supply chain optimization.
 
 ---
-"# walmart_analysis" 
-"# walmart_analysis" 
+"#walmart_analysis" 
+"#walmart_analysis" 
