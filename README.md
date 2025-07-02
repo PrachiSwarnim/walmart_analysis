@@ -25,8 +25,8 @@ kaggle datasets download -d najir0123/walmart-10k-sales-datasets
 ```
 
 ## 3. Data Acquisition
-- **Source:** Walmart Sales Dataset
-- **Storage:** Organize the dataset under a data/ directory for easy access.
+- **Source:** [Walmart Sales Dataset](https://www.kaggle.com/datasets/najir0123/walmart-10k-sales-datasets)
+- **Storage:** Organize the dataset under a ```bash data/``` directory for easy access.
      
 ## Requirements
 
