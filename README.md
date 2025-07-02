@@ -46,14 +46,49 @@ This end-to-end Walmart Sales Data Analysis project combines Python for data pre
     df.info(), df.describe(), df.head()
     ```
 ## 6. Data Cleaning Pipeline:
-  - **Duplicate Handling:** Remove redundant records to ensure data integrity.
-  - **Missing Values:** Impute, fill, or remove nulls based on significance.
-  - **Data Type Correction:**
-    - Convert date columns to ```datetime```
-    - Ensure numeric columns (like revenue or quantity) are floats or integers
-  - **Currency & String Formatting:** Clean up currency symbols or inconsistent string patterns.
-  - **Data Validation:** Confirm there are no outliers, inconsistencies, or logical mismatches.
+- **Duplicate Handling:** Remove redundant records to ensure data integrity.
+- **Missing Values:** Impute, fill, or remove nulls based on significance.
+  **Data Type Correction:**
+  - Convert date columns to ```datetime```
+  - Ensure numeric columns (like revenue or quantity) are floats or integers
+- **Currency & String Formatting:** Clean up currency symbols or inconsistent string patterns.
+- **Data Validation:** Confirm there are no outliers, inconsistencies, or logical mismatches.
 
+## 7. Feature Engineering:
+- **Derived Columns:**
+  - **Total Revenue/Amount:**
+    ```bash
+    df['total_amount'] = df['unit_price'] * df['quantity']
+    ```
+  - **Time-based Features:** Extract year, month, day, hour for temporal analysis.
+  - **Categorical Segmentation:** Payment type grouping, time-of-day buckets (morning, afternoon, etc.).
+- **Purpose:** Enrich the dataset for deeper insights in SQL and Power BI.
+
+## 8. Data Loading into MySQL Database
+- **Establish Connection:** Use SQLAlchemy to create an engine and connect Python with MySQL.
+- **Table Creation:** Auto-generate SQL tables from DataFrame schemas.
+- **Data Insertion:** Push cleaned and feature-engineered data into MySQL for persistent storage and query-based analysis.
+- **Validation:** Run basic SQL queries (```SELECT *```, ```COUNT(*)```, ```LIMIT```) to verify successful insertion.
+
+## 9. SQL Analysis — Business Problem Solving
+- **Address complex business queries, such as:**
+  - **Revenue Trends:** Across years, branches, and categories.
+  - **Top Product Categories:** What sells best and where.
+  - **Time-Based Sales Patterns:** Identify high-performing hours, days, or months.
+  - **Payment Method Analysis:** Customer preferences by location or time.
+  - **Revenue Drop Alerts:** Branches or categories with negative YoY growth.
+  - **Profitability Metrics:** Breakdown by branch, category, or time.
+
+## 10. Power BI Analysis
+- **Revenue Analysis:** Tracked revenue trends YoY by branch and product line.
+- **Customer Behavior:** Analyzed purchase patterns by day, time, and rating.
+- **Branch Performance:** Compared branch revenues and flagged revenue drops.
+- **Sales Trends:** Visualized peak sales hours and days using heatmaps.
+- **Top N Analysis:** Identified top-performing branches/products dynamically.
+- **Payment Method:** Monitored shifts in payment preferences over time.
+- **Transaction Volume:** Evaluated how transaction count impacts revenue.
+- **Time Series:** Analyzed monthly and yearly revenue seasonality patterns.
+- **Geographical Analysis:** Visualized revenue distribution by branch location.
      
 ## Requirements
 
@@ -96,13 +131,6 @@ This section will include your analysis findings:
 - **Profitability**: Insights into the most profitable product categories and locations.
 - **Customer Behavior**: Trends in ratings, payment preferences, and peak shopping hours.
 
-## Future Enhancements
-
-Possible extensions to this project:
-- Integration with a dashboard tool (e.g., Power BI or Tableau) for interactive visualization.
-- Additional data sources to enhance analysis depth.
-- Automation of the data pipeline for real-time data ingestion and analysis.
-  
 ---
 
 ## Acknowledgments
