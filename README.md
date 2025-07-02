@@ -89,7 +89,9 @@ This end-to-end Walmart Sales Data Analysis project combines Python for data pre
 - **Transaction Volume:** Evaluated how transaction count impacts revenue.
 - **Time Series:** Analyzed monthly and yearly revenue seasonality patterns.
 - **Geographical Analysis:** Visualized revenue distribution by branch location.
-     
+
+---
+
 ## Requirements
 
 - **Python 3.8+**
@@ -97,6 +99,8 @@ This end-to-end Walmart Sales Data Analysis project combines Python for data pre
 - **Python Libraries**:
   - `pandas`, `numpy`, `sqlalchemy`, `mysql-connector-python`
 - **Kaggle API Key** (for data downloading)
+
+---
 
 ## Getting Started
 
