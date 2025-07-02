@@ -19,6 +19,14 @@ This end-to-end Walmart Sales Data Analysis project combines Python for data pre
 ```bash
 C:\Users\<YourUsername>\.kaggle\
 ```
+- **Step 3:** Use the command below to download datasets directly into your project folder:
+```bash
+kaggle datasets download -d najir0123/walmart-10k-sales-datasets
+```
+
+## 3. Data Acquisition
+- **Source:** Walmart Sales Dataset
+- **Storage:** Organize the dataset under a data/ directory for easy access.
      
 ## Requirements
 
