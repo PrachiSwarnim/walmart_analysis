@@ -42,7 +42,7 @@ This end-to-end Walmart Sales Data Analysis project combines Python for data pre
   - Detect missing values or anomalies
 - **Methods:**
   - Use Pandas functions like:
-    ```bash
+    ```python
     df.info(), df.describe(), df.head()
     ```
 ## 6. Data Cleaning Pipeline:
