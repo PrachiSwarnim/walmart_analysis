@@ -1,82 +1,101 @@
-# Walmart Data Analysis: End-to-End SQL + Python Project + Power BI
+# Walmart Data Analysis: End-to-End SQL + Python + Power BI Project
 
 ## Project Overview
 
-![Project Pipeline]<img src="https://github.com/PrachiSwarnim/walmart_analysis/blob/main/walmart_sales_data_analysis.jpg" width=800>
+![Project Pipeline](https://github.com/PrachiSwarnim/walmart_analysis/blob/main/walmart_cover.jpg)
 
-This project is an end-to-end data analysis solution designed to extract critical business insights from Walmart sales data. We utilize Python for data processing and analysis, SQL for advanced querying, and structured problem-solving techniques to solve key business questions. The project is ideal for data analysts looking to develop skills in data manipulation, SQL querying, and data pipeline creation.
+This end-to-end Walmart Sales Data Analysis project combines Python for data preprocessing and SQL for advanced insights extraction. It uncovers key business trends across branches, product lines, payment methods, and customer behaviors. The insights are visualized through an interactive Power BI dashboard, enabling data-driven decision-making on sales performance, revenue patterns, and customer trends.
 
 ---
 
 ## Project Steps
+## 1. Set Up the Environment
+- **Tools Used:** Visual Studio Code (VS Code), Python, MySQL, Power BI
+- **Objective:** Build a clean, structured workspace for seamless development, data processing, SQL querying, and visualization.
 
-### 1. Set Up the Environment
-   - **Tools Used**: Visual Studio Code (VS Code), Python, SQL (MySQL and PostgreSQL)
-   - **Goal**: Create a structured workspace within VS Code and organize project folders for smooth development and data handling.
+## 2. Configure Kaggle API for Data Access
+- **Step 1:** Obtain your Kaggle API token from Kaggle under Account Settings.
+- **Step 2:** Place the downloaded kaggle.json file in the following directory:
+  ```bash
+  C:\Users\<YourUsername>\.kaggle\
+  ```
+- **Step 3:** Use the command below to download datasets directly into your project folder:
+  ```bash
+  kaggle datasets download -d najir0123/walmart-10k-sales-datasets
+  ```
 
-### 2. Set Up Kaggle API
-   - **API Setup**: Obtain your Kaggle API token from [Kaggle](https://www.kaggle.com/) by navigating to your profile settings and downloading the JSON file.
-   - **Configure Kaggle**: 
-      - Place the downloaded `kaggle.json` file in your local `.kaggle` folder.
-      - Use the command `kaggle datasets download -d <dataset-path>` to pull datasets directly into your project.
+## 3. Data Acquisition
+- **Source:** [Walmart Sales Dataset](https://www.kaggle.com/datasets/najir0123/walmart-10k-sales-datasets)
+- **Storage:** Organize the dataset under a ```data/``` directory for easy access.
 
-### 3. Download Walmart Sales Data
-   - **Data Source**: Use the Kaggle API to download the Walmart sales datasets from Kaggle.
-   - **Dataset Link**: [Walmart Sales Dataset](https://www.kaggle.com/najir0123/walmart-10k-sales-datasets)
-   - **Storage**: Save the data in the `data/` folder for easy reference and access.
+## 4. Install Required Libraries & Load Data
+- **Install Python Libraries:**
+  ```bash
+  pip install pandas numpy sqlalchemy mysql-connector-python
+  ```
+- **Data Loading:** Import data into a Pandas DataFrame for exploration, cleaning, and transformation.
 
-### 4. Install Required Libraries and Load Data
-   - **Libraries**: Install necessary Python libraries using:
-     ```bash
-     pip install pandas numpy sqlalchemy mysql-connector-python psycopg2
-     ```
-   - **Loading Data**: Read the data into a Pandas DataFrame for initial analysis and transformations.
+## 5. Initial Data Exploration
+- **Goals:**
+  - Understand data distribution
+  - Check data types and schema
+  - Detect missing values or anomalies
+- **Methods:**
+  - Use Pandas functions like:
+    ```python
+    df.info(), df.describe(), df.head()
+    ```
+## 6. Data Cleaning Pipeline:
+- **Duplicate Handling:** Remove redundant records to ensure data integrity.
+- **Missing Values:** Impute, fill, or remove nulls based on significance.
+- **Data Type Correction:**
+  - Convert date columns to ```datetime```
+  - Ensure numeric columns (like revenue or quantity) are floats or integers
+- **Currency & String Formatting:** Clean up currency symbols or inconsistent string patterns.
+- **Data Validation:** Confirm there are no outliers, inconsistencies, or logical mismatches.
 
-### 5. Explore the Data
-   - **Goal**: Conduct an initial data exploration to understand data distribution, check column names, types, and identify potential issues.
-   - **Analysis**: Use functions like `.info()`, `.describe()`, and `.head()` to get a quick overview of the data structure and statistics.
+## 7. Feature Engineering:
+- **Derived Columns:**
+  - **Total Revenue/Amount:**
+    ```bash
+    df['total_amount'] = df['unit_price'] * df['quantity']
+    ```
+  - **Time-based Features:** Extract year, month, day, hour for temporal analysis.
+  - **Categorical Segmentation:** Payment type grouping, time-of-day buckets (morning, afternoon, etc.).
+- **Purpose:** Enrich the dataset for deeper insights in SQL and Power BI.
 
-### 6. Data Cleaning
-   - **Remove Duplicates**: Identify and remove duplicate entries to avoid skewed results.
-   - **Handle Missing Values**: Drop rows or columns with missing values if they are insignificant; fill values where essential.
-   - **Fix Data Types**: Ensure all columns have consistent data types (e.g., dates as `datetime`, prices as `float`).
-   - **Currency Formatting**: Use `.replace()` to handle and format currency values for analysis.
-   - **Validation**: Check for any remaining inconsistencies and verify the cleaned data.
+## 8. Data Loading into MySQL Database
+- **Establish Connection:** Use SQLAlchemy to create an engine and connect Python with MySQL.
+- **Table Creation:** Auto-generate SQL tables from DataFrame schemas.
+- **Data Insertion:** Push cleaned and feature-engineered data into MySQL for persistent storage and query-based analysis.
+- **Validation:** Run basic SQL queries (```SELECT *```, ```COUNT(*)```, ```LIMIT```) to verify successful insertion.
 
-### 7. Feature Engineering
-   - **Create New Columns**: Calculate the `Total Amount` for each transaction by multiplying `unit_price` by `quantity` and adding this as a new column.
-   - **Enhance Dataset**: Adding this calculated field will streamline further SQL analysis and aggregation tasks.
+## 9. SQL Analysis — Business Problem Solving
+- **Address complex business queries, such as:**
+  - **Revenue Trends:** Across years, branches, and categories.
+  - **Top Product Categories:** What sells best and where.
+  - **Time-Based Sales Patterns:** Identify high-performing hours, days, or months.
+  - **Payment Method Analysis:** Customer preferences by location or time.
+  - **Revenue Drop Alerts:** Branches or categories with negative YoY growth.
+  - **Profitability Metrics:** Breakdown by branch, category, or time.
 
-### 8. Load Data into MySQL and PostgreSQL
-   - **Set Up Connections**: Connect to MySQL and PostgreSQL using `sqlalchemy` and load the cleaned data into each database.
-   - **Table Creation**: Set up tables in both MySQL and PostgreSQL using Python SQLAlchemy to automate table creation and data insertion.
-   - **Verification**: Run initial SQL queries to confirm that the data has been loaded accurately.
-
-### 9. SQL Analysis: Complex Queries and Business Problem Solving
-   - **Business Problem-Solving**: Write and execute complex SQL queries to answer critical business questions, such as:
-     - Revenue trends across branches and categories.
-     - Identifying best-selling product categories.
-     - Sales performance by time, city, and payment method.
-     - Analyzing peak sales periods and customer buying patterns.
-     - Profit margin analysis by branch and category.
-   - **Documentation**: Keep clear notes of each query's objective, approach, and results.
-
-### 10. Project Publishing and Documentation
-   - **Documentation**: Maintain well-structured documentation of the entire process in Markdown or a Jupyter Notebook.
-   - **Project Publishing**: Publish the completed project on GitHub or any other version control platform, including:
-     - The `README.md` file (this document).
-     - Jupyter Notebooks (if applicable).
-     - SQL query scripts.
-     - Data files (if possible) or steps to access them.
-
----
-
+## 10. Power BI Analysis
+- **Revenue Analysis:** Tracked revenue trends YoY by branch and product line.
+- **Customer Behavior:** Analyzed purchase patterns by day, time, and rating.
+- **Branch Performance:** Compared branch revenues and flagged revenue drops.
+- **Sales Trends:** Visualized peak sales hours and days using heatmaps.
+- **Top N Analysis:** Identified top-performing branches/products dynamically.
+- **Payment Method:** Monitored shifts in payment preferences over time.
+- **Transaction Volume:** Evaluated how transaction count impacts revenue.
+- **Time Series:** Analyzed monthly and yearly revenue seasonality patterns.
+- **Geographical Analysis:** Visualized revenue distribution by branch location.
+     
 ## Requirements
 
 - **Python 3.8+**
-- **SQL Databases**: MySQL, PostgreSQL
+- **SQL Databases**: MySQL
 - **Python Libraries**:
-  - `pandas`, `numpy`, `sqlalchemy`, `mysql-connector-python`, `psycopg2`
+  - `pandas`, `numpy`, `sqlalchemy`, `mysql-connector-python`
 - **Kaggle API Key** (for data downloading)
 
 ## Getting Started
@@ -111,19 +130,6 @@ This section will include your analysis findings:
 - **Sales Insights**: Key categories, branches with highest sales, and preferred payment methods.
 - **Profitability**: Insights into the most profitable product categories and locations.
 - **Customer Behavior**: Trends in ratings, payment preferences, and peak shopping hours.
-
-## Future Enhancements
-
-Possible extensions to this project:
-- Integration with a dashboard tool (e.g., Power BI or Tableau) for interactive visualization.
-- Additional data sources to enhance analysis depth.
-- Automation of the data pipeline for real-time data ingestion and analysis.
-
----
-
-## License
-
-This project is licensed under the MIT License. 
 
 ---
 
