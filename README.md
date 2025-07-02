@@ -138,8 +138,9 @@ This end-to-end Walmart Sales Data Analysis project combines Python for data pre
 ---
 
 ## Sneak Peak into the Dashboard!
-[Walmart Analysis Dashboard]
+[Walmart Analysis Dashboard](https://github.com/PrachiSwarnim/walmart_analysis/blob/main/walmart-analysis-dashboard.png)
 
+---
 
 ## Acknowledgments
 
