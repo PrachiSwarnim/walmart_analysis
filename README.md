@@ -48,7 +48,7 @@ This end-to-end Walmart Sales Data Analysis project combines Python for data pre
 ## 6. Data Cleaning Pipeline:
 - **Duplicate Handling:** Remove redundant records to ensure data integrity.
 - **Missing Values:** Impute, fill, or remove nulls based on significance.
-  **Data Type Correction:**
+- **Data Type Correction:**
   - Convert date columns to ```datetime```
   - Ensure numeric columns (like revenue or quantity) are floats or integers
 - **Currency & String Formatting:** Clean up currency symbols or inconsistent string patterns.
