@@ -126,12 +126,20 @@ This end-to-end Walmart Sales Data Analysis project combines Python for data pre
 
 ## Results and Insights
 
-This section will include your analysis findings:
-- **Sales Insights**: Key categories, branches with highest sales, and preferred payment methods.
-- **Profitability**: Insights into the most profitable product categories and locations.
-- **Customer Behavior**: Trends in ratings, payment preferences, and peak shopping hours.
+- **Top Branches & Categories:** Identified highest-revenue branches and best-selling product lines.
+- **Profit Drivers:** Pinpointed the most profitable locations and product categories.
+- **Revenue Trends:** Strong sales during weekends and peak hours (Afternoon & Evening).
+- **Customer Behavior:** Higher customer ratings align with higher revenue; digital payments are on the rise.
+- **Performance Monitoring:** Flagged branches with YoY revenue drops for quick business action.
+- **Time-Based Patterns:** Heatmaps show busiest periods are post-work hours and weekends.
+- **Payment Shifts:** Noticed clear movement from cash to E-wallets and cards over time.
+- **Dynamic Top N:** Interactive analysis of top 5/10 branches, products, or payment methods.
 
 ---
+
+## Sneak Peak into the Dashboard!
+[Walmart Analysis Dashboard]
+
 
 ## Acknowledgments
 
