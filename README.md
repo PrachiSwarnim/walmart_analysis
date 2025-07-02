@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-![Project Pipeline](https://github.com/PrachiSwarnim/walmart_analysis/blob/main/walmart_cover.jpg)
+                              ![Project Pipeline](https://github.com/PrachiSwarnim/walmart_analysis/blob/main/walmart_cover.jpg)
 
 This end-to-end Walmart Sales Data Analysis project combines Python for data preprocessing and SQL for advanced insights extraction. It uncovers key business trends across branches, product lines, payment methods, and customer behaviors. The insights are visualized through an interactive Power BI dashboard, enabling data-driven decision-making on sales performance, revenue patterns, and customer trends.
 
